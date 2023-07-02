@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Financiamento FIES</title>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">Fies</header>
+    <main class="container">
+       
+       <section class="calculadora">
+            <form id="formulario" class="formulario-style">
+                <h1 class="titulo">Simulador de porcentagem de Financiamento FIES</h1>
+                <div class="input-box">
+                    <label for="rfpc">
+                        Renda Familiar Mensal Bruta Per Capita em reais:
+                    </label>
+                    <div class="icone-input">
+                        <i class="fa-solid fa-brazilian-real-sign"></i>
+                        <input type="number" min="0" max="1000000" step="any" id="rendaPerCapita" required>
+                    </div>
+                    
+                </div>
+                <div class="input-box">
+                    <label for="cc">
+                        Conceito de Cursos (CC) em porcentagem:
+                    </label>
+                    <div class="icone-input">
+                        <i class="fa-solid fa-book"></i>                    
+                        <input type="number" id="conceito-de-curso" min="0.5" max="4.5"  required>
+                        <span><strong>%</strong></span>
+                    </div>
+                    <p class="descricao">
+                        -1,5% (um vírgula cinco por cento) para cursos de CC igual a 5</br>
+                        -3% (três por cento) para cursos de CC igual a 4</br>
+                        -4,5% (quatro vírgula cinco) para cursos de CC igual a 3
+                    </p>
+                    <h4 class="descricao-titulo"><strong>Curso de Medicina:</strong></h4>
+                    <p class="descricao">
+                        -0,5% (zero vírgula cinco por cento) para cursos de CC igual a 5</br>
+                        -1,0% (um vírgula zero por cento) para cursos de CC igual a 4</br>
+                        -1,5% (um vírgula cinco por cento) para cursos de CC igual a 3
+                    </p>
+                    
+                    
+                </div>
+                <div class="input-box">
+                    <label for="rfpc">
+                        Mensalidade em reais:
+                    </label>
+                    <div class="icone-input">
+                        <i class="fa-solid fa-brazilian-real-sign"></i>
+                        <input type="number" min="0" max="1000000" step="any" id="mensalidadeCurso" required>
+                        
+                    </div>
+                    
+                </div>
+                <button class="botao-calcular">Calcular</button>
+            </form>
+            <div class="infos">
+                <div class="resultado">
+                    <div id="financiamento" class="financiamento-style">
+                        <span id="value"></span>
+                        <span></span>
+                        <div class="description">
+                            <span> </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mais-informacoes">
+                    <a href="https://acessounico.mec.gov.br/fies/duvidas#sobre-o-fies">Desenvolvido com base na fórmula de calculo disponibilizado na página oficial do programa</a>
+                    <i class="fa-sharp fa-solid fa-link"></i>
+                </div>
+            </div>
+       </section>
+
+    </main>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
